@@ -53,14 +53,14 @@
     <input type="text" id="answer" placeholder="أدخلي إجابتك هنا">
     <button onclick="checkAnswer()">إرسال</button>
     <div id="message" class="message">لؤه! 😾 جربي مرة ثانية.</div>
-    <div id="hint" class="hint">Hint: استخدمي إيموجي تحبّه 👀</div>
+    <div id="hint" class="hint">Hint: وحدة غالية عليّ وطخطوخية بكللل 👀</div>
 
     <script>
         let firstWrong = true;
 
         function checkAnswer() {
             var userAnswer = document.getElementById("answer").value.trim();
-            if (userAnswer === "🍌") {
+            if (userAnswer === "رندا") {
                 window.location.href = "second_page.html";
             } else {
                 document.getElementById("message").style.display = "block";
