@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>قلب ينبض</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #f8bbd0, #f48fb1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Arial', sans-serif;
+      direction: rtl;
+      user-select: none;
+      overflow: hidden;
+    }
+    .heart {
+      width: 180px;
+      height: 180px;
+      background-color: #e91e63;
+      position: relative;
+      transform: rotate(-45deg);
+      animation: pulse 1s infinite;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      background-color: #e91e63;
+      border-radius: 50%;
+    }
+    .heart::before {
+      top: -90px;
+      left: 0;
+    }
+    .heart::after {
+      top: 0;
+      left: 90px;
+    }
+    .heart-text {
+      transform: rotate(45deg);
+      color: white;
+      font-size: 1.8em;
+      font-weight: bold;
+      z-index: 1;
+    }
+    @keyframes pulse {
+      0%, 100% {
+        transform: rotate(-45deg) scale(1);
+      }
+      50% {
+        transform: rotate(-45deg) scale(1.1);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="heart" title="انقر على القلب">
+    <div class="heart-text">عيوتة</div>
+  </div>
+</body>
+</html>

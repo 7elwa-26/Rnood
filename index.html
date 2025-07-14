@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>ألطف بنوتة</title>
+    <style>
+        body {
+            background-color: #ffe6f0;
+            color: #5c0040;
+            font-family: 'Tahoma', sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-size: 24px;
+        }
+        .hint, .message {
+            margin-top: 20px;
+            font-size: 20px;
+            display: none;
+        }
+        .hint {
+            color: #8e005e;
+        }
+        .message {
+            color: red;
+        }
+        input {
+            margin-top: 20px;
+            padding: 10px;
+            font-size: 20px;
+            border-radius: 8px;
+            border: 1px solid #cc99b3;
+            text-align: center;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            background-color: #ff99cc;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div>من ألطف بنوتة في البنوتات كلهن؟</div>
+    <input type="text" id="answer" placeholder="أدخلي إجابتك هنا">
+    <button onclick="checkAnswer()">إرسال</button>
+    <div id="message" class="message">لؤه! 😾 جربي مرة ثانية.</div>
+    <div id="hint" class="hint">Hint: استخدمي إيموجي تحبّه 👀</div>
+
+    <script>
+        let firstWrong = true;
+
+        function checkAnswer() {
+            var userAnswer = document.getElementById("answer").value.trim();
+            if (userAnswer === "🍌") {
+                window.location.href = "second_page.html";
+            } else {
+                document.getElementById("message").style.display = "block";
+                if (firstWrong) {
+                    document.getElementById("hint").style.display = "block";
+                    firstWrong = false;
+                }
+            }
+        }
+    </script>
+</body>
+</html>
